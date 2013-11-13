@@ -1,6 +1,8 @@
-1) Programming LEDs using Arduino accordingly based on the input conditions.
-2) Writing scripts (probably using python) to get weather data from online.
-3) Scripts to analyze the data (using python).
-4) Scripts to visualze the data (using python) [For final report]
-3) Communicating from computer or mobile to Arduino
-4) Programming other input sensors for Arduino
+
+
+ 1) Writing scripts to collect weather data online.(may be using python).[Betcy]
+ 2) Scripts to analyse the data using python and Parse the data to get only temperature from the lists of data.[ Betcy, Smita]
+ 3) Communicating from Computer or mobile to Arduino. [Sasmita, ]
+ 4) Classifying the temperature in different categories.[ Smita ]
+ 5) Assigning LED color to each classification basically Programming RGB LEDs to different input conditions using Arduino. [Sasmita, ]
+ 6) Programming other input sensors for Arduino.[ Sasmita, ]
