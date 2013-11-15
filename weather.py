@@ -22,6 +22,6 @@ def getWeatherInfo(zipcode):
     return weatherList
     
 wList = []
-wList = getWeatherInfo('97006')
+wList = getWeatherInfo(zipcode)
 print '[temp, humidity, Wind {Chill, direction, speed}]'
 print wList
