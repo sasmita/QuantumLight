@@ -15,9 +15,10 @@ def getWeatherInfo(zipcode):
     windList = []
     yahooResult = pywapi.get_weather_from_yahoo(zipcode)
     #WindList[Chill, Direction, Speed]
-    windList = [int(yahooResult['wind']['chill']), int(yahooResult['wind']['direction']), int(yahooResult['wind']['speed'])] 
+
+    windList = [float(yahooResult['wind']['chill']), float(yahooResult['wind']['direction']), float(yahooResult['wind']['speed'])] 
     #weatherList[temperature, Humidity, windList];
-    weatherList = [int(yahooResult['condition']['temp']), int(yahooResult['atmosphere']['humidity']), windList ]
+    weatherList = [float(yahooResult['condition']['temp']), float(yahooResult['atmosphere']['humidity']), windList ]
     #print weatherList
     return weatherList
     
@@ -25,3 +26,9 @@ wList = []
 wList = getWeatherInfo(zipcode)
 print '[temp, humidity, Wind {Chill, direction, speed}]'
 print wList
+
+#wDict = {'temp':wList[0] , 'humidity':wList[1], 'w_chill':wList[2][0], 'w_direction':wList[2][1], 'w_speed':wList[2][2]}
+#print wDict
+
+
+
