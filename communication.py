@@ -1,8 +1,20 @@
+/*
+
+QuantumLight
+SISINTY SASMITA PATRA
+SMITA KUNDARGI
+JEANNE VICTOR
+
+This program allows us to communicate from computer to Arduino. 
+This also displays the LED depending on weather condition.
+
+*/
+
+
 from weather import getWeatherInfo
 import serial
 
 wList = getWeatherInfo('97229')
-
 
 if (wList[0] < 10.0):
 	temp = '1'
