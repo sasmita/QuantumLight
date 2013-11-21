@@ -6,3 +6,23 @@
  4) Classifying the temperature in different categories.[ Smita ]
  5) Assigning LED color to each classification basically Programming RGB LEDs to different input conditions using Arduino. [Sasmita, ]
  6) Programming other input sensors for Arduino.[ Sasmita, ]
+
+ 7) As of now, we are able to turn on/off only one LED based on high temperature or low temperature. We will try to get the same thing working for series of LEDs. [Sasmita, ]
+This can be done by Programming LED strip using Neo pixel library (https://github.com/adafruit/Adafruit_NeoPixel) 
+
+8) In the previous steps, we are only programming the LEDs for temperature. Now we will programm the LEDs for wind also i.e. According to wind speed, we will pogramm LEDs to blink. For example, If wind is blowing fast, our LED will  blink fast. If wind is blowing slowly, it will blink slowly and suppose wind is not blowing at all then our Led will not blink. [Sasmita,   ]
+
+9) Using sensors data and programming LEDs according to the input data. NOTE: As of now we are only using online weather data.
+ 
+10) Creating an Android app that does the same thing as we are doing with computer.
+10.a) Collecting weather info from online using Android/Java.
+10.b) Classifying them into categories but in Android/Java.
+10.c) Communiating to Arduino from Android via bluetooth or wifi [Sasmita, ]
+ 
+Basically once 10) works, we can probably skip explaining the python/computer stuff in the class. We are using that as a prototype. If someone can start working on Android application, it will be great.
+
+11) Same steps to be followed as in step 4. Here we will consider weather data from sensors.
+ 
+12) Quantifying data:
+May be we can collect data for a period of time and show some kind of quantification.  OPTIONAL: We can conisder this based on available time.
+
