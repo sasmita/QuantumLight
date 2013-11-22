@@ -6,7 +6,7 @@ SMITA KUNDARGI
 JEANNE VICTOR
 
 This program allows us to communicate from computer to Arduino. 
-This also displays the LED depending on weather condition.
+This program also calls the serial module to display the LED depending on weather condition.
 
 */
 
