@@ -1,16 +1,17 @@
 /*
 
 QuantumLight
+
 SISINTY SASMITA PATRA
 SMITA KUNDARGI
 JEANNE VICTOR
 
+FileName: weather.py
+
 This program gets weather data from Internet 
 such as temperature, humidity, wind etc.
 
-
 */
-
 
 import pywapi
 import string
