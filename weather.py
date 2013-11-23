@@ -1,17 +1,16 @@
-/*
 
+'''
 QuantumLight
 
+JEANNE VICTOR
 SISINTY SASMITA PATRA
 SMITA KUNDARGI
-JEANNE VICTOR
 
 FileName: weather.py
 
-This program gets weather data from Internet 
-such as temperature, humidity, wind etc.
+This program gets weather data from Internet using pywapi (weather api).
 
-*/
+'''
 
 import pywapi
 import string
@@ -37,10 +36,10 @@ def getWeatherInfo(zipcode):
     #print weatherList
     return weatherList
     
-wList = []
-wList = getWeatherInfo(zipcode)
-print '[temp, humidity, Wind {Chill, direction, speed}]'
-print wList
+#wList = []
+#wList = getWeatherInfo(zipcode)
+#print '[temp, humidity, Wind {Chill, direction, speed}]'
+#print wList
 
 #wDict = {'temp':wList[0] , 'humidity':wList[1], 'w_chill':wList[2][0], 'w_direction':wList[2][1], 'w_speed':wList[2][2]}
 #print wDict

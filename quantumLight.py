@@ -1,5 +1,5 @@
-/*
 
+'''
 QuantumLight
 
 SISINTY SASMITA PATRA
@@ -8,17 +8,21 @@ JEANNE VICTOR
 
 FileName: quantumLight.py
 
-This program also calls the getWeatherclassification module from classify.py. 
-This program communicates from computer to Arduino and turns the LED on/off depending on the classification obtained from a particular weather condition. 
+This program display different LED patterns depending on the weather classification.
 
-*/
+This program calls the getWeatherclassification module from classify.py. Once we get the classification, we communicate that to Arduino to display the led pattern accordingly.
+'''
 
-from classify import getWeatherClassification
+import classify
 import serial
 
-tDict = getWeatherClassification('80001')
-temp = tDict['tempType']
+# 
+tDict = classify.getWeatherClassification('85224')
+temperatureClass = tDict['tempType']
 
+# 
 ser = serial.Serial('/dev/tty.usbmodem1421', 9600)
-ser.write(temp)
+
+# 
+ser.write(temperatureClass)
 
