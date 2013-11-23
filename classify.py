@@ -1,3 +1,18 @@
+/*
+
+QuantumLight
+
+SISINTY SASMITA PATRA
+SMITA KUNDARGI
+JEANNE VICTOR
+
+FileName: classify.py
+
+This program classifies the weather data into different categories. 
+This program also calls the getWeatherInfo module from weather.py
+
+*/
+
 from weather import getWeatherInfo
 
 zipcode = '85003'
