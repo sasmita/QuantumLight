@@ -11,6 +11,32 @@
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
 
+void RedPattern()
+{
+  for(uint16_t i=0; i<strip.numPixels(); i++) 
+  {
+      strip.setPixelColor(i, strip.Color(255,0,0));
+  }
+  strip.show(); 
+}
+
+void MidPattern()
+{
+  for(uint16_t i=0; i<strip.numPixels(); i++) 
+  {
+      strip.setPixelColor(i, strip.Color(255,127,127));
+  }
+  strip.show(); 
+}  
+
+void BluePattern()
+{
+  for(uint16_t i=0; i<strip.numPixels(); i++)
+  {clear
+      strip.setPixelColor(i, strip.Color(255,255,255));
+  }
+   strip.show();
+}  
 
 void setup() {
   // this function
@@ -23,27 +49,18 @@ void loop() {
     int input = Serial.parseInt();
     if (input == 2)
      {
-      for(uint16_t i=0; i<strip.numPixels(); i++) {
-        strip.setPixelColor(i, strip.Color(255,0,0));
-      strip.show();    
+      RedPattern();
      }
-    }
     else if(input == 1)
      {
-      for(uint16_t i=0; i<strip.numPixels(); i++) {
-        strip.setPixelColor(i, strip.Color(0,255,0));
-      strip.show();    
+      MidPattern();   
      }
-    }
     else 
      {
-      for(uint16_t i=0; i<strip.numPixels(); i++) {
-        strip.setPixelColor(i, strip.Color(0,0,255));
-      strip.show();    
+      BluePattern();  
      }
     }
-  // Finally showing all the LEDsstrip.show(); // Initialize all pixels to 'off'
-  }
+  // Finally showing all the LEDsstrip.show(); // Initialize all pixels to 'off
  }
 
 
