@@ -29,20 +29,41 @@ void MidPattern()
   strip.show(); 
 }  
 
-void BluePattern()
+void WhitePattern()
 {
   for(uint16_t i=0; i<strip.numPixels(); i++)
-  {clear
+  {
       strip.setPixelColor(i, strip.Color(255,255,255));
   }
    strip.show();
 }  
+
+
+void RedWindPattern()
+{
+  while (1)
+  {
+    for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(255,0,0));
+        strip.show();
+        delay(100); 
+    }
+   for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();
+        delay(100); 
+    }
+  }  
+}
 
 void setup() {
   // this function
   Serial.begin(9600); 
   strip.begin();
 }  
+
     
 void loop() {
   while (Serial.available() > 0) {
@@ -55,9 +76,13 @@ void loop() {
      {
       MidPattern();   
      }
-    else 
+    else if(input == 3)
      {
-      BluePattern();  
+      RedWindPattern();  
+     }
+     else
+     { 
+       WhitePattern();
      }
     }
   // Finally showing all the LEDsstrip.show(); // Initialize all pixels to 'off
