@@ -1,3 +1,15 @@
+'''
+QuantumLight
+
+SISINTY SASMITA PATRA
+SMITA KUNDARGI
+JEANNE VICTOR
+
+FileName: processSensorData.py
+
+This program reading data from serial port and printing them in screen
+'''
+
 import serial
 import time
 

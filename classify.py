@@ -20,9 +20,9 @@ def getWeatherClassification(zipcode):
    print wList
 
    # classify temperature values
-   if wList[0] <= 7:
+   if wList[0] <= 10:
       tempType = '0'
-   elif (wList[0] > 7 and wList[0] <= 30):
+   elif (wList[0] > 10 and wList[0] <= 20):
       tempType = '1'
    else:
       tempType = '2'

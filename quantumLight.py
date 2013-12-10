@@ -17,12 +17,13 @@ import classify
 import serial
 
 # 
-tDict = classify.getWeatherClassification('85224')
+tDict = classify.getWeatherClassification('85003')
+
 temperatureClass = tDict['tempType']
 
 # 
-ser = serial.Serial('/dev/tty.usbmodem1421', 9600)
+ser = serial.Serial('/dev/tty.usbmodem1411', 9600)
 
-# 
-ser.write(temperatureClass)
-
+#
+ser.write('2') 
+#ser.write(temperatureClass)
