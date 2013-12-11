@@ -59,4 +59,5 @@ elif(t == 2 and w == 2):
    pattern = '8'
 
 print 'pattern: ', pattern
-srl.write(pattern) 
+srl.write('6')
+#srl.write(pattern) 

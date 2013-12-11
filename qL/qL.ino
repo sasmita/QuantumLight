@@ -74,7 +74,7 @@ void NormalLessWindy()
 {
     for(uint16_t i=0; i<strip.numPixels(); i++) 
     {
-        strip.setPixelColor(i, strip.Color(255,127,127));
+        strip.setPixelColor(i, strip.Color(255,80,80));
         strip.show();
         delay(300); 
     }
