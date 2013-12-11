@@ -11,13 +11,12 @@ This program reading data from serial port and printing them in screen
 '''
 
 import serial
-import time
 
-ser = serial.Serial('/dev/tty.usbmodem1411', 9600, timeout = 1.0)
-buffer = []
+ser = serial.Serial('/dev/tty.usbmodem1411', 9600)
 
 while True:
 	val = ser.readline()
-	buffer.append(val) 
-	print(val)  
-	print buffer
+	# removing last two unnecessary characters ('\r\n')
+	val = val[0:4]
+	valFloat = int(val) + 20;
+	print valFloat,
