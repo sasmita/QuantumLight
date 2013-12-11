@@ -7,7 +7,8 @@
 // Parameter 3 = pixel type flags, add together as needed:
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
 
-int state = 0;
+// state defines one of the LED pattermn based on input condition
+int state = -1;
   
 void HotMoreWindy()
 {
@@ -138,6 +139,14 @@ void ColdNoWindy()
   } 
 }
 
+void blank()
+{
+  for(uint16_t i=0; i<strip.numPixels(); i++) 
+  {
+      strip.setPixelColor(i, strip.Color(0,0,0));
+      strip.show(); 
+  } 
+}
 
 void setup() {
   // this function
@@ -179,6 +188,12 @@ void loop() {
       case 1:
       	ColdLessWindy();
 	break;
+      case 0:
+      	ColdNoWindy();
+	break;
+      case -1:
+        blank();
+        break;
    }
  }
  
