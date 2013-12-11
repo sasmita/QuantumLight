@@ -15,12 +15,15 @@ This program calls the getWeatherclassification module from classify.py. Once we
 
 import classify
 import serial
+import processSensorData
 
-# 
+
+#
+sensorData = 0 
 zipcode = '85003'
 print zipcode
 
-tDict = classify.getWeatherClassification(zipcode)
+tDict = classify.getWeatherClassification(zipcode,sensorData)
 
 print tDict
 

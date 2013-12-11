@@ -12,9 +12,15 @@ This program classifies the weather data into different categories by using getW
 '''
 
 from weather import getWeatherInfo
+from processSensorData import getSensorData
 
-def getWeatherClassification(zipcode):
+def getWeatherClassification(zipcode, sensorData):
+
+ if(sensorData):  
+   wList = getSensorData()
+ else: 
    wList = getWeatherInfo(zipcode)
+
    print '[temp, humidity, wind]'
    print wList
 
