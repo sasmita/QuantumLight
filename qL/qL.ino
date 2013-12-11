@@ -11,35 +11,7 @@
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
 
-void RedPattern()
-{
-  for(uint16_t i=0; i<strip.numPixels(); i++) 
-  {
-      strip.setPixelColor(i, strip.Color(255,0,0));
-  }
-  strip.show(); 
-}
-
-void MidPattern()
-{
-  for(uint16_t i=0; i<strip.numPixels(); i++) 
-  {
-      strip.setPixelColor(i, strip.Color(255,127,127));
-  }
-  strip.show(); 
-}  
-
-void WhitePattern()
-{
-  for(uint16_t i=0; i<strip.numPixels(); i++)
-  {
-      strip.setPixelColor(i, strip.Color(255,255,255));
-  }
-   strip.show();
-}  
-
-
-void RedWindPattern()
+void HotMoreWindy()
 {
   while (1)
   {
@@ -47,16 +19,139 @@ void RedWindPattern()
     {
         strip.setPixelColor(i, strip.Color(255,0,0));
         strip.show();
-        delay(100); 
+        delay(10); 
     }
    for(uint16_t i=0; i<strip.numPixels(); i++) 
     {
         strip.setPixelColor(i, strip.Color(0,0,0));
         strip.show();
-        delay(100); 
+        delay(10); 
     }
   }  
 }
+
+void HotLessWindy()
+{
+  while (1)
+  {
+    for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(255,0,0));
+        strip.show();
+        delay(300); 
+    }
+   for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();
+        delay(300); 
+    }
+  }  
+}
+
+void HotNoWindy()
+{
+  for(uint16_t i=0; i<strip.numPixels(); i++) 
+  {
+      strip.setPixelColor(i, strip.Color(255,0,0));
+      strip.show(); 
+  }  
+}
+
+void NormalMoreWindy()
+{
+   while (1)
+  {
+    for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(255,127,127));
+        strip.show();
+        delay(10); 
+    }
+   for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();
+        delay(10); 
+    }
+  }  
+}
+
+void NormalLessWindy()
+{
+   while (1)
+  {
+    for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(255,127,127));
+        strip.show();
+        delay(300); 
+    }
+   for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();
+        delay(300); 
+    }
+  }  
+}
+
+void NormalNoWindy()
+{
+  for(uint16_t i=0; i<strip.numPixels(); i++) 
+  {
+      strip.setPixelColor(i, strip.Color(255,127,127));
+      strip.show(); 
+  }  
+}
+
+void ColdMoreWindy()
+{
+  while (1)
+  {
+    for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(255,255,255));
+        strip.show();
+        delay(10); 
+    }
+   for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();
+        delay(10); 
+    }
+  }  
+}
+
+void ColdLessWindy()
+{
+  while (1)
+  {
+    for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(255,255,255));
+        strip.show();
+        delay(300); 
+    }
+   for(uint16_t i=0; i<strip.numPixels(); i++) 
+    {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();
+        delay(300); 
+    }
+  }  
+}
+
+void ColdNoWindy()
+{
+  for(uint16_t i=0; i<strip.numPixels(); i++) 
+  {
+      strip.setPixelColor(i, strip.Color(255,255,255));
+      strip.show(); 
+  } 
+}
+
 
 void setup() {
   // this function
@@ -68,21 +163,41 @@ void setup() {
 void loop() {
   while (Serial.available() > 0) {
     int input = Serial.parseInt();
-    if (input == 2)
+    if (input == 8)
      {
-      RedPattern();
+      HotMoreWindy();
      }
-    else if(input == 1)
+    else if(input == 7)
      {
-      MidPattern();   
+      HotLessWindy(); 
      }
-    else if(input == 3)
+    else if(input == 6)
      {
-      RedWindPattern();  
+      HotNoWindy();  
+     }
+      else if(input == 5)
+     {
+      NormalMoreWindy();   
+     }
+    else if(input == 4)
+     {
+      NormalLessWindy();  
+     }
+      else if(input == 3)
+     {
+      NormalNoWindy();   
+     }
+    else if(input == 2)
+     {
+      ColdMoreWindy();  
+     }
+      else if(input == 1)
+     {
+      ColdLessWindy();   
      }
      else
      { 
-       WhitePattern();
+       ColdNoWindy();
      }
     }
   // Finally showing all the LEDsstrip.show(); // Initialize all pixels to 'off

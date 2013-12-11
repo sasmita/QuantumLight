@@ -93,9 +93,7 @@ void loop(void) {
   }
   celsius = (float)raw / 16.0;
   fahrenheit = celsius * 1.8 + 32.0;
-  Serial.print("  Temperature = ");
+  //Serial.print("Temperature = ");
   Serial.print(celsius);
-  Serial.print(" Celsius, ");
-  Serial.print(fahrenheit);
-  Serial.println(" Fahrenheit");
+  Serial.print(" C ");
 }
