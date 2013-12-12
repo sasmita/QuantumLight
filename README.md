@@ -1,7 +1,9 @@
 QuantumLight
 ============
 
-Lighting LEDs differently based on different input conditions by quantifying data. For this project we are quantifying weather data.
+Quantifying the input data and displaying various LED patterns based on quantification.
+
+Our focus: Quantifying 
 
 
 Setup instructions:
