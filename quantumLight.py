@@ -15,10 +15,11 @@ This program calls the getWeatherclassification module from classify.py. Once we
 
 import classify
 import serial
+import time
 
 #
 sensorData = 0 
-#sensorData = 1
+#sensorData = 0
  
 #zipcode = '97201'#psu
 zipcode = '60007' #chicago
@@ -29,44 +30,48 @@ if(sensorData):
 else:
   print "Getting data from: ", zipcode
 
-tDict = classify.getWeatherClassification(zipcode,sensorData)
+def getPattern(t, w):
+  #temperature is cold
+  if (t == 0 and w == 0):
+    #
+    pattern = '0'
+  elif(t == 0 and w == 1):
+    #
+    pattern = '1'
+  elif(t == 0 and w == 2):
+    pattern = '2'
 
-print tDict
+  #temperature is normal
+  elif(t == 1 and w == 0):
+    pattern = '3'
+  elif(t == 1 and w == 1):
+    pattern = '4'
+  elif(t == 1 and w == 2):
+    pattern = '5'
 
-t = tDict['t']
-w = tDict['ws']
+  #temperature is hot
+  elif(t == 2 and w == 0):
+    pattern = '6'
+  elif(t == 2 and w == 1):
+    pattern = '7'
+  elif(t == 2 and w == 2):
+    pattern = '8'
 
-# 
-srl = serial.Serial('/dev/tty.usbmodem1411', 9600)
+  return pattern
+#end def getPattern
 
-#
-pattern = '-1'
 
-#temperature is cold
-if (t == 0 and w == 0):
-   #
-   pattern = '0'
-elif(t == 0 and w == 1):
-   #
-   pattern = '1'
-elif(t == 0 and w == 2):
-   pattern = '2'
-#temperature is normal
-elif(t == 1 and w == 0):
-   pattern = '3'
-elif(t == 1 and w == 1):
-   pattern = '4'
-elif(t == 1 and w == 2):
-   pattern = '5'
+while(1):
+  srl = serial.Serial('/dev/tty.usbmodem1411', 9600)
+  # Keep tracking current weather data
+  tDict = classify.getWeatherClassification(zipcode,sensorData)
 
-#temperature is hot
-elif(t == 2 and w == 0):
-   pattern = '6'
-elif(t == 2 and w == 1):
-   pattern = '7'
-elif(t == 2 and w == 2):
-   pattern = '8'
+  print tDict
 
-print 'pattern: ', pattern
-srl.write(pattern) 
-srl.close()
+  pattern = getPattern(tDict['t'], tDict['ws']);
+
+  print 'pattern: ', pattern
+  srl.write(pattern) 
+
+  srl.close()
+  time.sleep(5)
