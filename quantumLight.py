@@ -15,13 +15,15 @@ This program calls the getWeatherclassification module from classify.py. Once we
 
 import classify
 import serial
-import processSensorData
-
 
 #
-sensorData = 0 
-zipcode = '85003'
-print zipcode
+sensorData = 1 
+zipcode = '97201'
+
+if(sensorData):
+  print "Getting data from sensor"
+else:
+  print "Getting data from: ", zipcode
 
 tDict = classify.getWeatherClassification(zipcode,sensorData)
 
@@ -62,5 +64,5 @@ elif(t == 2 and w == 2):
    pattern = '8'
 
 print 'pattern: ', pattern
-srl.write('6')
-#srl.write(pattern) 
+srl.write(pattern) 
+srl.close()
