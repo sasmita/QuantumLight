@@ -25,6 +25,11 @@ void setup() {
   Serial.begin(9600); 
   strip.begin();
 }  
+
+void loop() {
+  sensor();
+  ledPattern();
+}
   
 void HotMoreWindy()
 {
@@ -294,9 +299,5 @@ void sensor(void) {
   //Serial.print(" C ");
 }
 
-void loop() {
-  sensor();
-  ledPattern();
-}
  
 
