@@ -17,8 +17,12 @@ import classify
 import serial
 
 #
-sensorData = 1 
-zipcode = '97201'
+sensorData = 0 
+#sensorData = 1
+ 
+#zipcode = '97201'#psu
+zipcode = '60007' #chicago
+#zipcode = '97229'#home
 
 if(sensorData):
   print "Getting data from sensor"
@@ -38,7 +42,7 @@ srl = serial.Serial('/dev/tty.usbmodem1411', 9600)
 #
 pattern = '-1'
 
-#
+#temperature is cold
 if (t == 0 and w == 0):
    #
    pattern = '0'
@@ -47,7 +51,7 @@ elif(t == 0 and w == 1):
    pattern = '1'
 elif(t == 0 and w == 2):
    pattern = '2'
-#
+#temperature is normal
 elif(t == 1 and w == 0):
    pattern = '3'
 elif(t == 1 and w == 1):
@@ -55,7 +59,7 @@ elif(t == 1 and w == 1):
 elif(t == 1 and w == 2):
    pattern = '5'
 
-#
+#temperature is hot
 elif(t == 2 and w == 0):
    pattern = '6'
 elif(t == 2 and w == 1):
