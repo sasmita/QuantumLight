@@ -18,8 +18,8 @@ import serial
 import time
 
 #
-sensorData = 0 
-#sensorData = 0
+#sensorData = 1 
+sensorData = 0
  
 #zipcode = '97201'#psu
 zipcode = '60007' #chicago
