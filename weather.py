@@ -1,4 +1,3 @@
-
 '''
 QuantumLight
 
@@ -58,7 +57,6 @@ def getWeatherInfoInCSV(zipcode, filename):
                    int(result['wind']['direction']),
                    float(result['wind']['speed']) ]
     fd = open('%s.csv' % filename,'ab')
-    #fd = open('SampleData.csv','ab')
     writer = csv.writer(fd)
     writer.writerow((wList)) 
     fd.close()
