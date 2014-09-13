@@ -177,6 +177,7 @@ void ledPattern()
   while (Serial.available() > 0) 
   {
     state = Serial.parseInt();
+    Serial.print(state);
   }
   
   switch (state) 

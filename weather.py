@@ -56,13 +56,13 @@ def getWeatherInfoInCSV(zipcode, filename):
                    int(result['wind']['chill']),
                    int(result['wind']['direction']),
                    float(result['wind']['speed']) ]
+    '''
     fd = open('%s.csv' % filename,'ab')
     writer = csv.writer(fd)
     writer.writerow((wList)) 
     fd.close()
+    '''
     return wList
-
-
 
 getWeatherInfoInCSV(zipcode,"SampleDataForOR")
 

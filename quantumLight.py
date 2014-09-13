@@ -17,18 +17,12 @@ import classify
 import serial
 import time
 
-#
 #sensorData = 1 
 sensorData = 0
  
 #zipcode = '97201'#psu
-zipcode = '60007' #chicago
+#zipcode = '60007' #chicago
 #zipcode = '97229'#home
-
-if(sensorData):
-  print "Getting data from sensor"
-else:
-  print "Getting data from: ", zipcode
 
 def getPattern(t, w):
   #temperature is cold
@@ -62,6 +56,13 @@ def getPattern(t, w):
 
 
 while(1):
+  zipcode = raw_input("Please enter a zipcode: ")
+
+  if(sensorData):
+    print "Getting data from sensor"
+  else:
+    print "Getting data from: ", zipcode
+
   srl = serial.Serial('/dev/tty.usbmodem1411', 9600)
   # Keep tracking current weather data
   tDict = classify.getWeatherClassification(zipcode,sensorData)
