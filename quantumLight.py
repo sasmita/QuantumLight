@@ -3,8 +3,6 @@
 QuantumLight
 
 SISINTY SASMITA PATRA
-SMITA KUNDARGI
-JEANNE VICTOR
 
 FileName: quantumLight.py
 
