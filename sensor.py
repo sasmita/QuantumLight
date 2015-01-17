@@ -2,8 +2,6 @@
 QuantumLight
 
 SISINTY SASMITA PATRA
-SMITA KUNDARGI
-JEANNE VICTOR
 
 FileName: processSensorData.py
 
