@@ -1,9 +1,7 @@
 '''
 QuantumLight
 
-JEANNE VICTOR
 SISINTY SASMITA PATRA
-SMITA KUNDARGI
 
 FileName: weather.py
 
