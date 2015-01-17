@@ -2,9 +2,8 @@
 '''
 QuantumLight
 
-SMITA KUNDARGI
 SISINTY SASMITA PATRA
-JEANNE VICTOR
+
 
 FileName: classify.py
 
